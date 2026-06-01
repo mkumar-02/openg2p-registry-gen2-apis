@@ -16,7 +16,8 @@ from .controllers import (
     G2PRegisterMetadataController, G2PRegisterTabMetadataController, G2PRegisterSectionMetadataController,
     G2PIngestionConfigurationController, G2POutgestionConfigurationController,
     G2PDataModelController,
-    G2PDocumentController, G2PAttributeController, G2PIngestionDataController, 
+    G2PDocumentController, G2PAttributeController, G2PIngestionDataController,
+    G2POutgestionDataController,
     G2PTemplateFileController,
     G2PRegistryConfigurationController,
     G2PRegistryThemeController,
@@ -32,6 +33,9 @@ from .controllers import (
     G2PScoreContributingAttributeController,
     G2PCompletionScoreController,
     G2PRegistrantAuthenticationController,
+    G2PAwePolicyConfigurationController,
+    G2PAWEWebhookController,
+    G2PAweProxyController,
 )
 
 _logger = logging.getLogger(_config.logging_default_logger_name)
@@ -53,6 +57,7 @@ class Initializer(BaseInitializer):
         G2PIngestionConfigurationController().post_init()
         G2PDataModelController().post_init()
         G2PIngestionDataController().post_init()
+        G2POutgestionDataController().post_init()
         G2POutgestionConfigurationController().post_init()
         G2PDocumentController().post_init()
         G2PTemplateFileController().post_init()
@@ -68,6 +73,9 @@ class Initializer(BaseInitializer):
         G2PScoreContributingAttributeController().post_init()
         G2PCompletionScoreController().post_init()
         G2PRegistrantAuthenticationController().post_init()
+        G2PAwePolicyConfigurationController().post_init()
+        G2PAWEWebhookController().post_init()
+        G2PAweProxyController().post_init()
 
     def migrate_database(self, args):
         _logger.info("Starting database migration")
