@@ -30,7 +30,7 @@ from .controllers import (
     G2PCompletionScoreController,
     G2PScoreController,
     G2PScoreDefinitionController,
-    G2PScoreContributingAttributeController
+    G2PScoreContributingAttributeController,
     G2PRegistrantAuthenticationController,
     G2PAwePolicyConfigurationController,
     G2PAWEWebhookController,
